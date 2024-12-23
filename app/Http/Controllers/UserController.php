@@ -24,6 +24,7 @@ class UserController extends Controller
         ], $messages);
 
         $data["password"] = bcrypt($request['registerPassword']);
+        $data["user"] = 'user';
 
         $user = User::create($data);
         auth()->login($user);
