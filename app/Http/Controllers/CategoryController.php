@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Services\DataMergerService;
 
 class CategoryController extends Controller
 {
@@ -12,8 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::query()->orderBy('created_at', 'desc')->paginate(15);
-        return view('categories.index', ['categories'=> $categories]);
+        $data = DataMergerService::getCategoriesAndNotes();
+        return view('categories.index', ['data'=> $data]);
     }
 
     /**
@@ -21,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return 'create';
     }
 
     /**
@@ -45,7 +46,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('categories.show', ['category'=> $category]);
+        return 'show';
     }
 
     /**
@@ -53,7 +54,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('categories.edit', ['category'=> $category]);
+        return 'edit';
     }
 
     /**

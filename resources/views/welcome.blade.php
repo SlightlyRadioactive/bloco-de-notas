@@ -6,7 +6,7 @@
             <button type="submit">Desconectar</button>
         </form>
     @else
-        <div class="content">
+        <div class="contentHome">
             <div class="formGroup">
                 <h3>Acessar conta</h3>
                 <form method="POST" action="/login">

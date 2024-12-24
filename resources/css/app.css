@@ -9,7 +9,7 @@ body {
     margin: 0;
 }
 
-.content {
+.contentHome {
     display: flex;
     box-sizing: border-box;
     border: 3px solid black;
@@ -17,11 +17,32 @@ body {
     justify-content: center;
     width: 40%;
     max-height: 100vh;
-    overflow-y: scroll;    
 
     & button {
         margin-top: 10px;
     }
+}
+
+.content {
+    display: flex;
+    box-sizing: border-box;
+    border: 3px solid black;
+    border-radius: 15px;
+    justify-content: center;
+    max-height: 100vh;
+
+    & button {
+        margin-top: 10px;
+    }
+}
+
+.section {
+    box-sizing: border-box;
+    max-height: 100vh;
+    overflow-y: scroll;
+    display: inline-block;
+    border: 1px solid black;
+    padding: 10px;
 }
 
 .formGroup {
@@ -49,9 +70,15 @@ body {
 }
 
 .entry{
+    padding: 0 3px 0 3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &:not(.newEntry):hover{
+        border: solid 1px grey;
+        border-radius: 5px;
+    }
 
     & form{
         display: inline;
@@ -60,7 +87,6 @@ body {
     & .options{
         visibility: hidden;
     }
-    
 
     &:hover p{
         cursor: pointer;
@@ -71,12 +97,38 @@ body {
     }
 }
 
-.storeForm, .editForm{
+.storeOrUpdateForm{
+    width:100%;
+    flex-direction:column;
+}
+
+.storeForm, .editForm, .storeOrUpdateForm, .showNote{
     display: none;
+}
+
+.options{
+    white-space: nowrap;
 }
 
 .messages, .errors{
     display: inline-block;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
+
+.sidebar{
+    min-width: 350px;
+}
+
+.w-break{
+    word-break: break-all;
+    padding: 0 3px 0 3px;
+}
+
+.full{
+    width: 100%;
 }
 
 input {
